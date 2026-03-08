@@ -31,14 +31,11 @@ public class DosenDemo26 {
 
             arrayDosen[i] = new Dosen26(kode, nama, jenisKelamin, usia);
         }
-
-        // Tampilkan data dengan FOREACH
-        System.out.println("\n===== DATA DOSEN =====");
-        int nomor = 1;
-        for (Dosen26 dosen : arrayDosen) {
-            System.out.println("Data Dosen ke-" + nomor);
-            dosen.cetakInfo();
-            nomor++;
-        }
+        Dosen26 dataDosen = new Dosen26();
+        dataDosen.dataSemuaDosen(arrayDosen);
+        dataDosen.jumlahDosenPerJenisKelamin(arrayDosen);
+        dataDosen.rerataUsiaDosenPerJenisKelamin(arrayDosen);
+        dataDosen.infoDosenPalingTua(arrayDosen);
+        dataDosen.infoDosenPalingMuda(arrayDosen);
     }
 }
