@@ -6,10 +6,10 @@ public class Pangkat {
         pangkat = p;
     }
 
-    int pangkatBF(int a, int n) {
+    int pangkatBF() {
         int hasil = 1;
-        for (int i = 0; i < n; i++) {
-            hasil = hasil*a;
+        for (int i = 0; i < this.nilai; i++) {
+            hasil = hasil*this.pangkat;
         }
         return hasil;
     }
