@@ -9,7 +9,7 @@ public class Queue {
         max = n;
         data = new int[max];
         size = 0;
-        front = rear - 1;
+        front = rear = -1;
     }
 
     public boolean isEmpty() {
@@ -63,37 +63,32 @@ public class Queue {
     public void Enqueue(int dt) {
         if (isFull()) {
             System.out.println("Queue sudah penuh");
-        } else {
-            if (isEmpty()) {
-                front = rear = 0;
-            } else {
-                if (rear == max - 1) {
-                    rear = 0;
-                } else {
-                    rear++;
-                }
-            }
-            data[rear] = dt;
-            size++;
+            System.exit(0);
         }
+        if (isEmpty()) {
+            front = rear = 0;
+        } else {
+            if (rear == max - 1) {
+                rear = 0;
+            } else {
+                rear++;
+            }
+        }
+        data[rear] = dt;
+        size++;
     }
 
     public int Dequeue() {
-        int dt = 0;
         if (isEmpty()) {
             System.out.println("Queue masih kosong");
+            System.exit(0);
+        }
+        int dt = data[front];
+        size--;
+        if (isEmpty()) {
+            front = rear = -1;
         } else {
-            dt = data[front];
-            size--;
-            if (isEmpty()) {
-                front = rear = -1;
-            } else {
-                if (front == max - 1) {
-                    front = 0;
-                } else {
-                    front++;
-                }
-            }
+            front = (front == max - 1) ? 0 : front + 1;
         }
         return dt;
     }
