@@ -75,25 +75,28 @@ public class DoubleLinkedList25 {
     public void removeFirst() {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong, tidak dapat dihapus!");
-        } else if (head == tail) {
+            return;
+        }
+        
+        if (head == tail) {
             head = tail = null;
         } else {
             head = head.next;
+            head.prev = null;
         }
     }
 
     public void removeLast() {
         if (isEmpty()) {
-            System.out.println("Linked List masih kosong, tidak dapat dihapus!");
-        } else if (head == tail) {
+            System.out.println("Linked List masih kosong");
+            return;
+        }
+        
+        if (head == tail) {
             head = tail = null;
         } else {
-            Node25 temp = head;
-            while (temp.next != tail) {
-                temp = temp.next;
-            }
-            temp.next = null;
-            tail = temp;
+            tail = tail.prev;
+            tail.next = null;
         }
     }
 
