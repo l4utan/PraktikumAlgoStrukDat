@@ -15,10 +15,10 @@ public class Mahasiswa25 {
 
     public void tampil() {
         System.out.println(
-                "NIM    : " + nim +
-                        "\nNama     : " + nama +
-                        "\nKelas    : " + kelas +
-                        "\nIPK  : " + ipk);
+            "NIM    : " + nim +
+            "\nNama     : " + nama +
+            "\nKelas    : " + kelas +
+            "\nIPK  : " + ipk);
     }
 
     public static Mahasiswa25 inputMahasiswa25(Scanner scan) {
